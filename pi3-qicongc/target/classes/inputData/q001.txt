@@ -1,0 +1,9 @@
+Q Booth shot Lincoln?
+A1 1 Booth shot Lincoln.
+A2 0 Lincoln shot Booth.
+A3 1 Lincoln was shot by Booth.
+A4 0 Booth was shot by Lincoln.
+A5 1 Booth assassinated Lincoln.
+A6 0 Lincoln assassinated Booth.
+A7 1 Lincoln was assassinated by Booth.
+A8 0 Booth was assassinated by Lincoln.
