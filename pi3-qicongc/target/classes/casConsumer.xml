@@ -20,13 +20,13 @@
       <nameValuePair>
         <name>OutputDirectory</name>
         <value>
-          <string>/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/outputData</string>
+          <string>/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/outputData</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import location="/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/typeSystem.xml"/>
+        <import location="/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/typeSystem.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

@@ -24,6 +24,9 @@ public class Main {
 	int n = Integer.parseInt(args[0]);
 	String inputDirectory = args[1];
 	String outputDirectory = args[2];
+//	int n = 1;
+//	String inputDirectory = "src/main/resources/inputData";
+//	String outputDirectory = "src/main/resources/outputData";
     // 2. Initialize a CPE by loading your CPE descriptor at 'src/main/resources/cpeDescriptor.xml'.
 	CpeDescription cpeDesc = UIMAFramework.getXMLParser().
 	      parseCpeDescription(new XMLInputSource("src/main/resources/QACpe.xml"));    
@@ -35,7 +38,7 @@ public class Main {
 	CasProcessor aeCasProcessor = casProcessors[0];
 	ConfigurationParameterSettings cpss = aeCasProcessor.getProcessingResourceMetaData().getConfigurationParameterSettings();
 	cpss.setParameterValue("N", n);
-	CasProcessor ccCasProcessor = casProcessors[0];
+	CasProcessor ccCasProcessor = casProcessors[1];
 	cpss = ccCasProcessor.getProcessingResourceMetaData().getConfigurationParameterSettings();
 	cpss.setParameterValue("OutputDirectory", outputDirectory);
     // 3. Pass the parameter n to your analysis engine(s) properly.
@@ -43,6 +46,7 @@ public class Main {
 	//Start Processing
 	mCPE.process();
     // Implement your code from here.
+	System.out.println("Done!");
 	
   }
 

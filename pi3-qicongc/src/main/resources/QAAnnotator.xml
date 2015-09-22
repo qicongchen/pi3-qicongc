@@ -4,21 +4,21 @@
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
     <delegateAnalysisEngine key="testElementAnnotator">
-      <import location="/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/testElementAnnotator.xml"/>
+      <import location="/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/testElementAnnotator.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="tokenAnnotator">
-      <import location="/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/tokenAnnotator.xml"/>
+      <import location="/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/tokenAnnotator.xml"/>
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="nGramAnnotator">
-      <import location="/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/nGramAnnotator.xml"/>
+      <import location="/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/nGramAnnotator.xml"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="answerScoringAnnotator">
-      <import location="/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/answerScoringAnnotator.xml"/>
+      <import location="/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/answerScoringAnnotator.xml"/>
     
     </delegateAnalysisEngine>
   <delegateAnalysisEngine key="evaluationAnnotator">
-      <import location="/Users/yuchenluo/Downloads/pi3-qicongc/src/main/resources/evaluationAnnotator.xml"/>
+      <import location="/Users/yuchenluo/git/pi3-qicongc/pi3-qicongc/src/main/resources/evaluationAnnotator.xml"/>
     
     
     </delegateAnalysisEngine>
