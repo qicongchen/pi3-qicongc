@@ -2,10 +2,8 @@ import org.apache.uima.UIMAFramework;
 import org.apache.uima.collection.CollectionProcessingEngine;
 import org.apache.uima.collection.base_cpm.CasProcessor;
 import org.apache.uima.collection.metadata.CpeDescription;
-import org.apache.uima.resource.metadata.ConfigurationParameterSettings;
+import org.apache.uima.resource.ConfigurableResource;
 import org.apache.uima.util.XMLInputSource;
-
-import collectionReader.FileSystemCollectionReader;
 public class Main {
 
   /**
@@ -24,29 +22,26 @@ public class Main {
 	int n = Integer.parseInt(args[0]);
 	String inputDirectory = args[1];
 	String outputDirectory = args[2];
-//	int n = 1;
-//	String inputDirectory = "src/main/resources/inputData";
-//	String outputDirectory = "src/main/resources/outputData";
     // 2. Initialize a CPE by loading your CPE descriptor at 'src/main/resources/cpeDescriptor.xml'.
 	CpeDescription cpeDesc = UIMAFramework.getXMLParser().
-	      parseCpeDescription(new XMLInputSource("src/main/resources/QACpe.xml"));    
+	      parseCpeDescription(new XMLInputSource("src/main/resources/cpeDescriptor.xml"));
+	
 	//instantiate CPE
 	mCPE = UIMAFramework.produceCollectionProcessingEngine(cpeDesc);
-	FileSystemCollectionReader fsCollectionReader = (FileSystemCollectionReader) mCPE.getCollectionReader();
-	fsCollectionReader.setConfigParameterValue("InputDirectory", inputDirectory);
+	ConfigurableResource collectionReader = (ConfigurableResource) mCPE.getCollectionReader();
+	collectionReader.setConfigParameterValue("InputDirectory", inputDirectory);
+	collectionReader.reconfigure();
 	CasProcessor[] casProcessors = mCPE.getCasProcessors();
-	CasProcessor aeCasProcessor = casProcessors[0];
-	ConfigurationParameterSettings cpss = aeCasProcessor.getProcessingResourceMetaData().getConfigurationParameterSettings();
-	cpss.setParameterValue("N", n);
-	CasProcessor ccCasProcessor = casProcessors[1];
-	cpss = ccCasProcessor.getProcessingResourceMetaData().getConfigurationParameterSettings();
-	cpss.setParameterValue("OutputDirectory", outputDirectory);
+	ConfigurableResource analysisEngine = (ConfigurableResource) casProcessors[0];
+	analysisEngine.setConfigParameterValue("N", n);
+	analysisEngine.reconfigure();
+	ConfigurableResource casConsumer = (ConfigurableResource) casProcessors[1];
+	casConsumer.setConfigParameterValue("OutputDirectory", outputDirectory);
+	casConsumer.reconfigure();
     // 3. Pass the parameter n to your analysis engine(s) properly.
     // 4. Run the CPE.
 	//Start Processing
 	mCPE.process();
-    // Implement your code from here.
-	System.out.println("Done!");
 	
   }
 
