@@ -17,7 +17,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import type.*;
 
 public class NGramAnnotator extends JCasAnnotator_ImplBase {
-	private int N;
+	private Integer N;
 
 	/**
 	   * @see AnalysisComponent#initialize(UimaContext)
@@ -25,7 +25,7 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 	  public void initialize(UimaContext aContext) throws ResourceInitializationException {
 	    super.initialize(aContext);
 	    // Get config. parameter values
-	    N = (int) aContext.getConfigParameterValue("N");
+	    N = (Integer)aContext.getConfigParameterValue("N");
 	  }
 	  
   public void process(JCas aJCas) {

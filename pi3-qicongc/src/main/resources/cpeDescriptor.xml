@@ -3,14 +3,14 @@
     <collectionReader>
         <collectionIterator>
             <descriptor>
-                <import location="collectionReader.xml"/>
+                <import location="crs/collectionReader.xml"/>
             </descriptor>
         </collectionIterator>
     </collectionReader>
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
     <casProcessor deployment="integrated" name="QAAnnotator">
         <descriptor>
-            <import location="QAAnnotator.xml"/>
+            <import location="aes/QAAnnotator.xml"/>
         </descriptor>
             <deploymentParameters/>
         <errorHandling>
@@ -30,7 +30,7 @@
     </casProcessor>
     <casProcessor deployment="integrated" name="casConsumer">
         <descriptor>
-            <import location="casConsumer.xml"/>
+            <import location="ccs/casConsumer.xml"/>
         </descriptor>
             <deploymentParameters/>
         <errorHandling>
